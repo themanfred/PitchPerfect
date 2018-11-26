@@ -1,13 +1,44 @@
 /* Main navbar */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
-  transition: all 0.3s ease;
+  // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  // background-color: transparent !important;
+  background: transparent;
+  border-color: transparent;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
+}
+
+.navbar-wagon-white {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: white;
+}
+
+h1, h2, h3  {
+  font-family: 'Montserrat', cursive;
+  font-size: larger;
+  margin-bottom: auto;
+  text-decoration: none;
+}
+
+h2:hover {
+    color: #333333;
+    text-decoration: none;
+}
+
+
+a {
+ color: #333333;
+ text-decoration: none;
+}
+
+a:hover {
+   color: #333333;
+
+  text-decoration: none;
 }
 
 /* Logo */
@@ -33,16 +64,26 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  opacity: 0.7;
 }
 
 /* Navbar link */
+.navbar-transparent-wagon-link {
+  color: white;
+ font-size: 14px;
+ font-weight: bold;
+}
+
 .navbar-wagon-link {
-  color: #616668;
+ color: white;
   font-size: 14px;
+   font-weight: bold;
+
 }
 .navbar-wagon-link:hover {
   color: #da552f;
   text-decoration: none;
+  font-weight: bold;
 }
 
 /* Dropdown menu */
