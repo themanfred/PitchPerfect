@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_175729) do
+ActiveRecord::Schema.define(version: 2018_11_26_094704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_11_25_175729) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pitch_id"
+    t.index ["pitch_id"], name: "index_masterpitches_on_pitch_id"
   end
 
   create_table "pitches", force: :cascade do |t|
@@ -67,6 +69,10 @@ ActiveRecord::Schema.define(version: 2018_11_25_175729) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "feedback_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "description"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["feedback_id"], name: "index_users_on_feedback_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -74,6 +80,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_175729) do
 
   add_foreign_key "feedbacks", "pitches"
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "masterpitches", "pitches"
   add_foreign_key "pitches", "masterpitches"
   add_foreign_key "pitches", "users"
   add_foreign_key "ratings", "feedbacks"
