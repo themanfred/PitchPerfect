@@ -66,9 +66,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_175729) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "feedback_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["feedback_id"], name: "index_users_on_feedback_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -77,5 +75,4 @@ ActiveRecord::Schema.define(version: 2018_11_25_175729) do
   add_foreign_key "pitches", "masterpitches"
   add_foreign_key "pitches", "users"
   add_foreign_key "ratings", "feedbacks"
-  add_foreign_key "users", "feedbacks"
 end
