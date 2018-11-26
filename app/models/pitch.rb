@@ -1,7 +1,7 @@
 class Pitch < ApplicationRecord
-belong_to :users
+  belongs_to :user
+  belongs_to :masterpitch, optional: true
 
-has_many :users
-has_many :feedbacks
-has_many :ratings, through: :feedbacks
+  has_many :feedbacks
+  has_many :ratings, through: :feedbacks
 end

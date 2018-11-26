@@ -5,8 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :pitches
-  has_many :masterpitches, through: :pitches
-  has_many :feedbacks, through: :pitches
   has_many :feedbacks
   has_many :ratings, through: :feedbacks
 end
