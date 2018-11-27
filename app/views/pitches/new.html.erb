@@ -1,8 +1,1 @@
-<%= simple_form_for(@pitch, method: :post, url: new_pitch_path) do |f| %>
-<%= f.input :name %>
-<%= f.input :topic %>
-<%= f.input :duration %>
-<%= f.input :target %>
-<%= f.input :transcript %>
-<%= f.button :submit, class: "btn-danger" %>
-<% end %>
+<%= render 'shared/banner-pitch' %>
