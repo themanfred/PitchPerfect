@@ -13,9 +13,9 @@ class PitchesController < ApplicationController
 
   def create
     @pitch = Pitch.new(pitch_params)
-    @pitch.user_id = current_user
+    @pitch.user_id = current_user.id
     if @pitch.save
-      redirect_to  user_pitch_path(@pitch)
+      redirect_to random_path
     else
       render :new
     end
@@ -28,7 +28,7 @@ class PitchesController < ApplicationController
   private
 
   def pitch_params
-    params.require(:pitches).permit(:name, :topic, :duration, :target, :target, :transcript)
+    params.require(:pitch).permit(:name, :topic, :duration, :target, :transcript)
   end
 end
 
