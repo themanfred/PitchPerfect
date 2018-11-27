@@ -1,26 +1,41 @@
 <h1> show Page </h1>
 <%= @pitch.name %>
 
-<!-- <div class="card card2">
-          <div class="card-content">
+<div class="card card2">
+     <div class="card-content">
         <div class="message">
           <div class="message-name">
-          <% @pitch.feedback.ratings each do |p| %>
+          <% @pitch.feedback each do |p| %>
           </div>
-        <div class="message-body">
-          <div class="card-content">
-          <p><strong>Comment</strong></p>
-          <p>
-          <%= p.review_comment %>
-          </p>
-       </div>
-         <div class="card-content">
-          <p><strong>Rating</strong></p>
-          <%= p.rating %>
+            <div class="message-body">
+              <div class="card-content">
+              <p><strong>Ratings</strong></p>
+              <p>
+              <%= p.value %>
+              <%= p.quality %>
+              <%= p.clarity %>
+              <%= p.pace %>
+              <%= p.body_language %>
+              <%= p.language %>
+              </p>
+
+             <div class="card-content">
+              <p><strong>Comment</strong></p>
+              <%= p.value_comment %>
+              <%= p.quality_comment %>
+              <%= p.clarity_comment %>
+              <%= p.pace_comment %>
+              <%= p.body_language_comment %>
+              <%= p.language_comment %>
+            </div>
+
+            <div class="card-content">
+              <p><strong>Additional Comment</strong></p>
+              <%= p.value_comment %>
+            </div>
         </div>
-      </div>
       </div>
     </div>
     <% end %>
 </div>
- -->
+
