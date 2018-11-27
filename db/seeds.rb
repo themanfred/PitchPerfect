@@ -1,4 +1,3 @@
-Rating.destroy_all
 Feedback.destroy_all
 Masterpitch.destroy_all
 Pitch.destroy_all

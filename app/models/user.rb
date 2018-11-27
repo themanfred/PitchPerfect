@@ -8,5 +8,4 @@ class User < ApplicationRecord
 
   has_many :pitches
   has_many :feedbacks
-  has_many :ratings, through: :feedbacks
 end
