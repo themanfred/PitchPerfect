@@ -55,6 +55,30 @@
 
 }
 
+
+.pitchcard {
+  width: 600px;
+  background-color:  rgba(250, 250, 250, 0.4);
+  padding: 60px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: block;
+  align-items: center;
+  justify-content: space-around;
+  margin-top:  16px;
+  margin-bottom: 30px;
+  // margin-left: 172px;
+  height: 468px;
+  color: black;
+  border-radius: 10px;
+}
+
+.pitchcard h2 {
+  margin-top: -50px;
+  margin-bottom: 42px;
+  font-size: 40px;
+  color: white;
+}
+
 .petitecard h2 {
   margin-top: -50px;
   margin-bottom: 42px;

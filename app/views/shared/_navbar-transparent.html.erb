@@ -1,6 +1,12 @@
 <div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
- <h1> <%= link_to 'Pitch Perfect', root_path %> </h1>
+ <h1>
+ <% if user_signed_in?  %>
+  <%= link_to 'Pitch Perfect', pitches_path %>
+   <% else %>
+   <%= link_to 'Pitch Perfect', root_path %>
+ <% end %>
+</h1>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
