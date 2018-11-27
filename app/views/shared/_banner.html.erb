@@ -2,8 +2,10 @@
 linear-gradient(-225deg, rgba(189,194,197,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path 'banner.png' %>);">
   <div class="banner-content">
     <h1> The way you pitch. We perfect it.</h1>
-     <button class="btn btn-lg  btn-primary center-block " name="Choose" type="submit">
-        Pitch Now
-       </button>
+       <% if user_signed_in? %>
+       <%= link_to 'Pitch Now', new_pitch_path,class: "btn btn-lg  btn-primary center-block" %>
+       <% else  %>
+       <%= link_to 'Pitch Now',new_user_session_path, class: "btn btn-lg  btn-primary center-block" %>
+      <% end %>
   </div>
 </div>
