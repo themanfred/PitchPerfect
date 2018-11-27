@@ -2,14 +2,13 @@
     <div class="card card1">
       <div class="card-content">
            <%= image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
-         <h2 class= "text-center"> Make your Profile  <%= "#{current_user.email}" %> </h2>
+         <h2 class= "text-center"> Make your profile <%= "#{@user.first_name} #{@user.last_name}" %> </h2>
       </div>
 
-         <%= @user.photo %>
-         <%= @user.first_name %>
-         <%= @user.last_name %>
-         <%= @user.email %>
-         <%= @user.description %>
+        <h3>Name:</h3> <h4><%= @user.first_name   %>  <%= @user.last_name   %></h4>
+        <h3>Email:</h3> <%= @user.email %>
+        <h3>Description:</h3> <%= @user.description %>
     </div>
+    <%= link_to "Edit your profile" , edit_user_registration_path %>
   </div>
 </div>
