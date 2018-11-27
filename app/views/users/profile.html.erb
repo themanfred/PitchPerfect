@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card card1">
+      <div class="card-content">
+           <%= image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
+         <h2 class= "text-center"> Make your Profile  <%= "#{current_user.email}" %> </h2>
+      </div>
+
+         <%= @user.photo %>
+         <%= @user.first_name %>
+         <%= @user.last_name %>
+         <%= @user.email %>
+         <%= @user.description %>
+    </div>
+  </div>
+</div>
