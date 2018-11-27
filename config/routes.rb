@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get :profile, to: 'users#profile'
+  get :random, to: 'pitches#random'
   resources :pitches do
     resources :feedbacks
   end
