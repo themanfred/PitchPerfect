@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get :profile, to: 'users#profile'
   get :random, to: 'pitches#random'
   resources :pitches do
-    resources :feedbacks do
-      resources :ratings, only: [:new, :create, :edit, :update]
-    end
+    resources :feedbacks
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
