@@ -1,6 +1,6 @@
 <div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
- <h1> Pitch Perfect </h1>
+ <h1> <%= link_to 'Pitch Perfect', root_path %> </h1>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -8,7 +8,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Are you a grandma?", new_grandma_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "New pitch", new_user_pitchy_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
        <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
