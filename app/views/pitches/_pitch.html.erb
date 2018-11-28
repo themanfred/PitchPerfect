@@ -1,18 +1,29 @@
 <div class="container">
-  <h1 class= "text-center"> pitch </h1>
-  <div class="row">
+    <div class="row">
     <% @pitches.each do |pitch|  %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-         <div class="card">
-          <div class="card-image" style="background: linear-gradient(to bottom,rgba(50,50,50, 0.15),rgba(76,76,76,0.2) 30%), url(<%= pitch.user.photo %>) center / cover no-repeat;"></div>
+         <div class="card ">
+          <div class="card-avatar">
+          <%= image_tag user_avatar(pitch.user), class: "avatar-bordered-large " %>
+          </div>
             <div class="card-content">
-              <div class="card-name">
+              <div class="card-name text-center">
                 <%= pitch.name %>
               </div>
                  <div class="pitch-description">
-                  <%=  pitch.topic %>
-                    <div class="pitch-booking">
-                    <%= link_to "Details",pitch_path(pitch), class: "btn btn-primary" %>
+                  <div >
+                    <h5><%=  pitch.user.first_name  %>
+                    <%=  pitch.user.last_name  %></h5>
+                  </div>
+                  <div>
+                    <h5> <%=  pitch.topic %> </h5>
+                  </div>
+                  <div>
+                    <h5> <%=  pitch.duration %> min. | <%=  pitch.created_at.strftime("%b %d, %Y") %></h5>
+                  </div>
+
+                  <div class="pitch-booking text-center">
+                    <%= link_to "Details",pitch_path(pitch), class: "btn btn-primary "  %>
                   </div>
                 </div>
             </div>
