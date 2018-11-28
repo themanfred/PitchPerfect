@@ -6,6 +6,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :pitches
-  has_many :feedbacks
-end
+  has_many :pitches, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy
