@@ -15,7 +15,7 @@ class PitchesController < ApplicationController
     @pitch = Pitch.new(pitch_params)
     @pitch.user_id = current_user.id
     if @pitch.save
-      redirect_to random_path
+      redirect_to pitch_random_path(@pitch)
     else
       render :new
     end
