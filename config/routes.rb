@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :pitches do
     get :video, to: 'pitches#video'
     get :random, to: 'pitches#random'
-    resources :feedbacks
+    resources :feedbacks, shallow: true
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

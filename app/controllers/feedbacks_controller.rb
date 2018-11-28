@@ -7,12 +7,13 @@ class FeedbacksController < ApplicationController
   def new
     @pitch = Pitch.find(params[:pitch_id])
     @feedback = Feedback.new
+
   end
 
   def create
     @feedback = Feedback.new(feedback_params)
     @pitch = Pitch.find(params[:pitch_id])
-    @pitch = @feedback.pitch
+    @feedback.pitch = @pitch
     @feedback.user = current_user
     if @feedback.save
       redirect_to pitch_path(@pitch)
