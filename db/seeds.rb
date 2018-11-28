@@ -28,6 +28,19 @@ end
 
 10.times do
 Feedback.create!(
+  value:
+  value_comment:
+  quality:
+  quality_comment:
+  clarity:
+  clarity_comment:
+  pace:
+  pace_comment:
+  body_language:
+  body_language_comment:
+  language:
+  language_comment:
+  comment:
   user_id: User.first.id,
   pitch_id: Pitch.first.id,
 )

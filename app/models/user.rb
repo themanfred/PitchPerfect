@@ -8,3 +8,4 @@ class User < ApplicationRecord
 
   has_many :pitches, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
+end
