@@ -1,12 +1,41 @@
-<h1><%= @pitch.name %></h1>
-<div class="card card2">
-     <div class="card-content">
-        <div class="message">
-          <div class="message-name">
-          <%= @pitch.feedbacks.each do |p| %>
-         </div>
-          <div class="message-body">
+<div class="container text-center">
+     <div class="grid ">
+        <div class="card card1">
            <div class="card-content">
+
+            <h2>
+              <%= @pitch.user.first_name %>
+                <%= @pitch.user.last_name %>
+              </h2>
+            <p>
+            <strong> <%= @pitch.user.email %> </strong> </%>
+             <p>
+              Don't fuck with me
+             </p>
+
+             <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+              <%= link_to "See other pitches",pitches_path(@pitch), class: "btn btn-danger btn-lg"%>
+          </div>
+         </div>
+
+
+      <div class="card card2 ">
+        <div class="card-content">
+          <h2>More about <%=@pitch.user.first_name %></h2>
+          <p class="text-justify">
+          <%= @pitch.user.description %>
+          </p>
+        <end>
+        </div>
+    </div>
+</div>
+
+<div class="card card2">
+  <h1 class= "text-center">
+    <%= @pitch.name %></h1>
+          <% @pitch.feedbacks.each do |p| %>
+          <div class=" container  ">
+            <div class="card-content">
               <p><strong>Ratings</strong></p>
               <p>
               <%= p.value %>
@@ -16,7 +45,8 @@
               <%= p.body_language %>
               <%= p.language %>
               </p>
-             </div>
+            </div>
+
 
              <div class="card-content">
               <p><strong>Comment</strong></p>
@@ -32,10 +62,8 @@
               <p><strong>Additional Comment</strong></p>
               <%= p.comment %>
             </div>
-          </div>
-       </div>
-    <% end %>
-   </div>
+
+          <% end %>
+        </div>
+    </div>
 </div>
-
-

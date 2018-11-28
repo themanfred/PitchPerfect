@@ -20,37 +20,37 @@ Pitch.create!(
   user_id: User.first.id,
   name:Faker::SiliconValley.invention,
   topic:Faker::WorldCup.team,
-  duration: [1..12].first,
+  duration: 1,
   target: Faker::VentureBros.organization,
   transcript:Faker::Lorem.paragraph
 )
 end
 
-10.times do
+
 Feedback.create!(
-  value:
-  value_comment:
-  quality:
-  quality_comment:
-  clarity:
-  clarity_comment:
-  pace:
-  pace_comment:
-  body_language:
-  body_language_comment:
-  language:
-  language_comment:
-  comment:
-  user_id: User.first.id,
-  pitch_id: Pitch.first.id,
+  user_id:User.first.id,
+  pitch_id:Pitch.first.id,
+  value:3,
+  value_comment:Faker::Lorem.paragraph,
+  quality:2,
+  quality_comment:Faker::Lorem.paragraph,
+  clarity:2,
+  clarity_comment: Faker::Lorem.paragraph,
+  pace:4,
+  pace_comment:Faker::Lorem.paragraph,
+  body_language:3,
+  body_language_comment:Faker::Lorem.paragraph,
+  language:2,
+  language_comment:Faker::Lorem.paragraph,
+  comment:Faker::Lorem.paragraph
 )
-end
+
 
 10.times do
 Masterpitch.create!(
   presenter_name:Faker::Simpsons.character,
   topic:Faker::Hacker.noun,
-  duration:[1..12].sample,
+  duration:1,
   target: Faker::TheFreshPrinceOfBelAir.celebrity,
   transcript: Faker::Lorem.paragraph,
   description: Faker::Lorem.sentence
