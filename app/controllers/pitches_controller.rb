@@ -1,10 +1,11 @@
 class PitchesController < ApplicationController
+  before_action :set_pitch, only: [:show, :edit, :update, :destroy]
+
   def index
     @pitches = Pitch.all
   end
 
   def show
-    @pitch = Pitch.find(params[:id])
   end
 
   def new
@@ -21,16 +22,36 @@ class PitchesController < ApplicationController
     end
   end
 
-  def destroy
-    @pitch.destroy
+  def edit
   end
 
-  private
+  def update
+    @pitch.update(pitch_params)
+
+    redirect_to pitch_path(@pitch)
+  end
+
+  def destroy
+    if @pitch.present?
+     @pitch.destroy
+    else
+      redirect_to pitch_path(@pitch)
+    end
+  end
+
+  def destroy
+      @pitch.destroy
+      respond_to do |format|
+      format.html { redirect_to pitches_url, notice: "#{@pitch.name} was deleted." }
+    end
+  end
+
+private
+  def set_pitch
+    @pitch = Pitch.find(params[:id])
+  end
 
   def pitch_params
-
     params.require(:pitch).permit(:name, :topic, :duration, :target, :transcript)
-
   end
 end
-

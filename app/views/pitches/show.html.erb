@@ -14,7 +14,6 @@
              </p>
 
              <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
-              <%= link_to "See other pitches",pitches_path(@pitch), class: "btn btn-danger btn-lg"%>
           </div>
          </div>
 
@@ -65,10 +64,12 @@
             </div>
 
            <%= link_to 'Edit',    edit_feedback_path(p)  %>
+           <%= link_to 'Delete', feedback_path(p), method: :delete %>
 
           <% end %>
         </div>
     </div>
 </div>
+<%= link_to 'Delete pitch', pitch_path(@pitch), method: :delete %>
+<%= link_to 'Edit your pitch',  edit_pitch_path(@pitch)%>
 
- <%= link_to 'Back', pitches_path %>
