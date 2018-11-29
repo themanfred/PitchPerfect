@@ -8,10 +8,12 @@
  <% end %>
 </h1>
 
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
+      <%= link_to "Explore pitches",pitches_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Links when logged in -->
 
