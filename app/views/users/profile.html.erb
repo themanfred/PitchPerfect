@@ -1,14 +1,42 @@
-<div class="container">
-    <div class="card card1">
-      <div class="card-content">
-           <%= image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
-         <h2 class= "text-center"> Make your profile <%= "#{@user.first_name} #{@user.last_name}" %> </h2>
-      </div>
+<div class="profilecard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=asset_path 'card.png'%>)">
+     <div class="avatar">
 
-        <h3>Name:</h3> <h4><%= @user.first_name   %>  <%= @user.last_name   %></h4>
-        <h3>Email:</h3> <%= @user.email %>
-        <h3>Description:</h3> <%= @user.description %>
+
+
+      <%= image_tag user_avatar(current_user), class: "avatar-bordered-large " %>
+      <div class="principale">
+        <h2><%= @user.first_name %> Gabriel Zerbib <%= @user.last_name   %></h2>
+        <h3> Pitch Expert</h3>
+        <h3  > Voir desciption</h3> <%= @user.description %>
+        <h3> <%= link_to "Edit your profile" , edit_user_registration_path%> </h3>
+     </div>
     </div>
-    <%= link_to "Edit your profile" , edit_user_registration_path %>
+    <div class="pins">
+      <p> Pitch </p>
+      <p> Feedback </p>
+      <p>Followers</p>
+      <p>Following</p>
+    </div>
   </div>
-</div>
+
+
+
+
+
+
+
+<div class="tabs">
+      <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My pitch</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Favorite</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+
+
+   <div class="profilecard2 card2">
+    <h1> My Pitch </h1>
+   </div>
+
+  </div>
