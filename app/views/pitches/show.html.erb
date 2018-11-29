@@ -1,2 +1,74 @@
-<h1> show Page </h1>
-<%= @pitch.name %>
+<div class="container text-center">
+     <div class="grid ">
+        <div class="card card1">
+           <div class="card-content">
+          <%=  image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
+            <h2>
+              <%= @pitch.user.first_name %>
+                <%= @pitch.user.last_name %>
+              </h2>
+            <p>
+            <strong> <%= @pitch.user.email %> </strong> </%>
+             <p>
+              Don't fuck with me
+             </p>
+
+             <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+              <%= link_to "See other pitches",pitches_path(@pitch), class: "btn btn-danger btn-lg"%>
+          </div>
+         </div>
+
+
+      <div class="card card2 ">
+        <div class="card-content">
+          <h2>More about <%=@pitch.user.first_name %></h2>
+          <p class="text-justify">
+          <%= @pitch.user.description %>
+          </p>
+        <end>
+        </div>
+    </div>
+
+</div>
+
+<div class="card card2">
+  <h1 class= "text-center">
+    <%= @pitch.name %></h1>
+          <% @pitch.feedbacks.each do |p| %>
+          <div class=" container  ">
+            <div class="card-content">
+              <p><strong>Ratings</strong></p>
+              <p>
+              <%= p.value %>
+              <%= p.quality %>
+              <%= p.clarity %>
+              <%= p.pace %>
+              <%= p.body_language %>
+              <%= p.language %>
+              </p>
+            </div>
+
+
+             <div class="card-content">
+              <p><strong>Comment</strong></p>
+              <%= p.value_comment %>
+              <%= p.quality_comment %>
+              <%= p.clarity_comment %>
+              <%= p.pace_comment %>
+              <%= p.body_language_comment %>
+              <%= p.language_comment %>
+            </div>
+
+            <div class="card-content">
+              <p><strong>Additional Comment</strong></p>
+              <%= p.comment %>
+            </div>
+
+           <%= link_to 'Edit',    edit_feedback_path(p)  %>
+
+          <% end %>
+        </div>
+    </div>
+</div>
+
+ <%= link_to 'Back', pitches_path %>

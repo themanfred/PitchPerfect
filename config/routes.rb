@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get :profile, to: 'users#profile'
   resources :pitches do
-    resources :feedbacks do
-      resources :ratings, only: [:new, :create, :edit, :update]
-    end
+    get :video, to: 'pitches#video'
+    get :random, to: 'pitches#random'
+    resources :feedbacks, shallow: true
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
