@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%= @pitch.user.first_name %>
 <%= @pitch.user.last_name %>
@@ -56,6 +57,8 @@
 <%= link_to 'Edit your pitch',  edit_pitch_path(@pitch)%>
 
 
+=======
+>>>>>>> 985cb57941ee33db3002db480a8146ca57508493
 <div class="container">
       <div class="profile text-center">
         <div class="main">
@@ -64,7 +67,6 @@
             <h2><%= @pitch.user.first_name %></h2>
             <h2><%= @pitch.user.last_name %></h2>
             <p><%= @pitch.user.email %> </p>
-            <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
           </div>
         </div>
         <div class="stat">
@@ -104,8 +106,145 @@
           </div>
     </div>
 
+<h2><strong>Feedback</strong></h2>
+<% if @pitch.feedbacks.any? %>
+  <div class="text-center">
+    <% @pitch.feedbacks.each do |p| %>
+    <div class="sub-entry" >
+      <h4>Rating</h4>
+        <div class="left">
+          <h5> <strong>Value</strong>
+            <div class="text-center">
+              <% p.value.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </h5>
+        </div>
 
+        <div class="left">
+          <h5> <strong>Quality</strong>
+            <div class="text-center">
+              <% p.quality.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+         </h5>
+        </div>
 
+        <div class="left">
+        <h5> <strong>Clarity</strong>
+          <div class="text-center">
+            <% p.clarity.times do %>
+            <i class="fa fa-star"></i>
+            <% end %>
+          </div>
+        </h5>
+        </div>
 
+        <div class="left">
+        <h5> <strong>Pace</strong>
+          <div class="text-center">
+            <% p.pace.times do %>
+            <i class="fa fa-star"></i>
+            <% end %>
+          </div>
+        </h5>
+        </div>
 
+        <div class="left">
+          <h5> <strong>Body Language</strong>
+            <div class="text-center">
+              <% p.body_language.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </h5>
+        </div>
+
+        <div class="left">
+          <h5> <strong>Language</strong>
+            <div class="text-center">
+              <% p.language.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </h5>
+        </div>
+    </div>
+
+<div class="sub-entry">
+  <h4>Comments</h4>
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.value_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.quality_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.clarity_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.pace_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.body_language_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.language_comment%>
+        </div>
+      </h5>
+    </div>
+
+  </div>
+<div >
+  <h4>Additional feedback</h4>
+  <div class="left">
+  <%= p.comment %>
+  </div>
+</div>
+<%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+     </div>
+<%= link_to 'Edit',    edit_feedback_path(p)  %>
+<%= link_to 'Delete', feedback_path(p), method: :delete %>
+    <% end %>
+  </div>
+
+<% else %>
+    <div class="text-center">
+      <h3>
+        There is no feedbacks for this pitch. Be the first to review it!
+      </h3>
+    <div>
+      <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+     </div>
+  </div>
+<% end %>
 
