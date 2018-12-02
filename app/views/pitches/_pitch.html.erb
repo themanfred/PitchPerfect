@@ -1,13 +1,13 @@
 
-<div class="container">
-    <div class="row">
+<div class="container ">
+    <div class="row ">
     <% @pitches.each do |pitch|  %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-         <div class="card ">
-          <div class="card-avatar">
-          <%= image_tag user_avatar(pitch.user), class: "avatar-bordered-large " %>
+         <div class="card cards-pp ">
+          <div class="card-avatar ">
+          <%= image_tag user_avatar(pitch.user), class: "avatar-bordered-large"  %>
           </div>
-           <div class="text-center">
+           <div class="text-center ">
               <h5><%=  pitch.user.first_name  %>
                 <%=  pitch.user.last_name  %></h5>
             </div>

@@ -2,8 +2,8 @@ class Feedback < ApplicationRecord
   belongs_to :user
   belongs_to :pitch
 
-  VALID_RATING = %w(1 2 3 4 5)
-  validates_inclusion_of :clarity, in: VALID_RATING
+  VALID_RATING = [1, 2, 3, 4, 5]
+  validates :clarity, inclusion: { in: VALID_RATING }
   validates_inclusion_of :quality, in: VALID_RATING
   validates_inclusion_of :pace, in: VALID_RATING
   validates_inclusion_of :body_language, in: VALID_RATING

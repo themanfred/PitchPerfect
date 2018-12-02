@@ -5,15 +5,15 @@
 
       <%= image_tag user_avatar(current_user), class: "avatar-bordered-large " %>
       <div class="principale">
-        <h2><%= @user.first_name %> Gabriel Zerbib <%= @user.last_name   %></h2>
+        <h2><%= @user.first_name %> <%= @user.last_name   %></h2>
         <h3> Pitch Expert</h3>
-        <h3  > Voir desciption</h3> <%= @user.description %>
+        <h3 > <strong>Your desciption:</strong></h3> <%= @user.description %>
         <h3> <%= link_to "Edit your profile" , edit_user_registration_path%> </h3>
      </div>
     </div>
     <div class="pins">
-      <p> Pitch </p>
-      <p> Feedback </p>
+      <p> Pitches </p>
+      <p> Feedbacks </p>
       <p>Followers</p>
       <p>Following</p>
     </div>
@@ -27,7 +27,7 @@
 
 <div class="tabs">
       <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My pitch</a></li>
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My pitches</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Favorite</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
@@ -36,7 +36,10 @@
 
 
    <div class="profilecard2 card2">
-    <h1> My Pitch </h1>
+    <h1> My Pitches </h1>
+    <div class="row">
+   </div>
+  </div>
    </div>
 
-  </div>
+</div>
