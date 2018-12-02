@@ -1,3 +1,33 @@
+<<<<<<< HEAD
+<%= @pitch.user.first_name %>
+<%= @pitch.user.last_name %>
+<%= @pitch.user.email %>
+<%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+<%=@pitch.user.first_name %>
+<%= @pitch.user.description %>
+<%= @pitch.name %></h1>
+<% @pitch.feedbacks.each do |p| %>
+<%= p.value %>
+<%= p.quality %>
+<%= p.clarity %>
+<%= p.pace %>
+<%= p.body_language %>
+<%= p.language %>
+
+
+
+<%= p.value_comment %>
+<%= p.quality_comment %>
+<%= p.clarity_comment %>
+<%= p.pace_comment %>
+<%= p.body_language_comment %>
+<%= p.language_comment %>
+<%= p.comment %>
+<%= link_to 'Edit',    edit_feedback_path(p)  %>
+<%= link_to 'Delete', feedback_path(p), method: :delete %>
+
+<% end %>
+=======
 <div class="container">
   <div class="grid">
     <div class="text-center">
@@ -20,47 +50,62 @@
           </div>
       </div>
 </div>
+>>>>>>> e64bea941053c2902827c857e36479806e4e1d7d
 
-<div class="card card2">
-  <h1 class= "text-center">
-    <%= @pitch.name %></h1>
-          <% @pitch.feedbacks.each do |p| %>
-          <div class=" container  ">
-            <div class="card-content">
-              <p><strong>Ratings</strong></p>
-              <p>
-              <%= p.value %>
-              <%= p.quality %>
-              <%= p.clarity %>
-              <%= p.pace %>
-              <%= p.body_language %>
-              <%= p.language %>
-              </p>
-            </div>
-
-
-             <div class="card-content">
-              <p><strong>Comment</strong></p>
-              <%= p.value_comment %>
-              <%= p.quality_comment %>
-              <%= p.clarity_comment %>
-              <%= p.pace_comment %>
-              <%= p.body_language_comment %>
-              <%= p.language_comment %>
-            </div>
-
-            <div class="card-content">
-              <p><strong>Additional Comment</strong></p>
-              <%= p.comment %>
-            </div>
-
-           <%= link_to 'Edit',    edit_feedback_path(p)  %>
-           <%= link_to 'Delete', feedback_path(p), method: :delete %>
-
-          <% end %>
-        </div>
-    </div>
-</div>
 <%= link_to 'Delete pitch', pitch_path(@pitch), method: :delete %>
 <%= link_to 'Edit your pitch',  edit_pitch_path(@pitch)%>
+
+
+<div class="container">
+      <div class="profile text-center">
+        <div class="main">
+          <div class="main-content">
+            <%=  image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
+            <h2><%= @pitch.user.first_name %></h2>
+            <h2><%= @pitch.user.last_name %></h2>
+            <p><%= @pitch.user.email %> </p>
+            <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3>3,536</h3>
+            <p>contributions</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3>758</h3>
+            <p>followers</p>
+          </div>
+          </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3>119</h3>
+            <p>repositories</p>
+          </div>
+          </div>
+        <div class="description">
+          <div class="description-content">
+            <h3></h3>
+            <p class="text-justify">
+              <%= link_to 'Delete pitch', pitch_path(@pitch), method: :delete %>
+              <%= link_to 'Edit your pitch',  edit_pitch_path(@pitch)%>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="description">
+          <div class="description-content">
+            <h3>More about Sebastien</h3>
+            <p class="text-justify">
+              I am a full-stack developer with 9 years of experience working in startups. Scratching your own itch? Working on a startup project? Lots of ideas but frustrated that you can't code them? Confused with agencies' or freelances' quotes? No clue when a developer is talking? Time to learn to code with Le Wagon with a 9-week intensive and immersive bootcamp!
+            </p>
+          </div>
+    </div>
+
+
+
+
+
 
