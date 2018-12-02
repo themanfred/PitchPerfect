@@ -1,61 +1,3 @@
-<<<<<<< HEAD
-<%= @pitch.user.first_name %>
-<%= @pitch.user.last_name %>
-<%= @pitch.user.email %>
-<%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
-<%=@pitch.user.first_name %>
-<%= @pitch.user.description %>
-<%= @pitch.name %></h1>
-<% @pitch.feedbacks.each do |p| %>
-<%= p.value %>
-<%= p.quality %>
-<%= p.clarity %>
-<%= p.pace %>
-<%= p.body_language %>
-<%= p.language %>
-
-
-
-<%= p.value_comment %>
-<%= p.quality_comment %>
-<%= p.clarity_comment %>
-<%= p.pace_comment %>
-<%= p.body_language_comment %>
-<%= p.language_comment %>
-<%= p.comment %>
-<%= link_to 'Edit',    edit_feedback_path(p)  %>
-<%= link_to 'Delete', feedback_path(p), method: :delete %>
-
-<% end %>
-=======
-<div class="container">
-  <div class="grid">
-    <div class="text-center">
-          <%=  image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
-            <h2>
-              <%= @pitch.user.first_name %>
-                <%= @pitch.user.last_name %>
-              </h2>
-            <p>
-            <strong> <%= @pitch.user.email %> </strong> </%>
-             <p>
-              Don't fuck with me
-             </p>
-
-             <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
-
-          <h2>More about <%=@pitch.user.first_name %></h2>
-          <%= @pitch.user.description %>
-          </p>
-          </div>
-      </div>
-</div>
->>>>>>> e64bea941053c2902827c857e36479806e4e1d7d
-
-<%= link_to 'Delete pitch', pitch_path(@pitch), method: :delete %>
-<%= link_to 'Edit your pitch',  edit_pitch_path(@pitch)%>
-
-
 <div class="container">
       <div class="profile text-center">
         <div class="main">
@@ -64,7 +6,6 @@
             <h2><%= @pitch.user.first_name %></h2>
             <h2><%= @pitch.user.last_name %></h2>
             <p><%= @pitch.user.email %> </p>
-            <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
           </div>
         </div>
         <div class="stat">
@@ -104,8 +45,145 @@
           </div>
     </div>
 
+<h2><strong>Feedback</strong></h2>
+<% if @pitch.feedbacks.any? %>
+  <div class="text-center">
+    <% @pitch.feedbacks.each do |p| %>
+    <div class="sub-entry" >
+      <h4>Rating</h4>
+        <div class="left">
+          <h5> <strong>Value</strong>
+            <div class="text-center">
+              <% p.value.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </h5>
+        </div>
 
+        <div class="left">
+          <h5> <strong>Quality</strong>
+            <div class="text-center">
+              <% p.quality.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+         </h5>
+        </div>
 
+        <div class="left">
+        <h5> <strong>Clarity</strong>
+          <div class="text-center">
+            <% p.clarity.times do %>
+            <i class="fa fa-star"></i>
+            <% end %>
+          </div>
+        </h5>
+        </div>
 
+        <div class="left">
+        <h5> <strong>Pace</strong>
+          <div class="text-center">
+            <% p.pace.times do %>
+            <i class="fa fa-star"></i>
+            <% end %>
+          </div>
+        </h5>
+        </div>
 
+        <div class="left">
+          <h5> <strong>Body Language</strong>
+            <div class="text-center">
+              <% p.body_language.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </h5>
+        </div>
+
+        <div class="left">
+          <h5> <strong>Language</strong>
+            <div class="text-center">
+              <% p.language.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </h5>
+        </div>
+    </div>
+
+<div class="sub-entry">
+  <h4>Comments</h4>
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.value_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.quality_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.clarity_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.pace_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.body_language_comment%>
+        </div>
+      </h5>
+    </div>
+
+    <div >
+      <h5>
+        <div class="left">
+         <%= p.language_comment%>
+        </div>
+      </h5>
+    </div>
+
+  </div>
+<div >
+  <h4>Additional feedback</h4>
+  <div class="left">
+  <%= p.comment %>
+  </div>
+</div>
+<%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+     </div>
+<%= link_to 'Edit',    edit_feedback_path(p)  %>
+<%= link_to 'Delete', feedback_path(p), method: :delete %>
+    <% end %>
+  </div>
+
+<% else %>
+    <div class="text-center">
+      <h3>
+        There is no feedbacks for this pitch. Be the first to review it!
+      </h3>
+    <div>
+      <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+     </div>
+  </div>
+<% end %>
 
