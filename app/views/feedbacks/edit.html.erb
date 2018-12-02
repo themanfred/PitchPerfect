@@ -7,7 +7,7 @@
        <div class="text-center">
        </div>
         <%= simple_form_for @feedback do |f| %>
-        <%= f.input :value, inclusion: { in (1..5)} %>
+        <%= f.input :value %>
         <%= f.input :value_comment,placeholder: 'Did you feel it was useful?' %>
         <%= f.input :quality %>
         <%= f.input :quality_comment,placeholder: 'Was the pitch well given?' %>
