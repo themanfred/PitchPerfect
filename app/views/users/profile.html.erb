@@ -4,19 +4,18 @@
       <div class="principale">
         <h2><%= @user.first_name %> <%= @user.last_name   %></h2>
         <h3> Pitch Expert</h3>
-        <h3 > <strong>Your desciption:</strong></h3> <%= @user.description %>
         <h3> <%= link_to "Edit your profile" , edit_user_registration_path%> </h3>
      </div>
     </div>
 
  <div class="tabs">
           <a class="tab active" href="#">
-            <h3>350</h3>
-            <p>Upvoted</p>
+            <h3>15</h3>
+            <p>My Pitch</p>
           </a>
           <a class="tab" href="#">
             <h3>456</h3>
-            <p>Submitted</p>
+            <p>Reviews</p>
           </a>
           <a class="tab" href="#">
             <h3>189</h3>
@@ -29,6 +28,25 @@
         </div>
 
     </div>
+
+  <div class="container">
+<% @pitchs.each do |pitch| %>
+      <div class="product">
+        <div class="product-upvote">
+          <div class="product-arrow"></div>
+          <div class="product-count">55</div>
+        </div>
+        <img src="images/roadstr.jpg" alt="" class="product-image">
+        <div class="product-body">
+          <h3><%= pitch.name %></h3>
+          <p><%= pitch.topic %></p>
+        </div>
+        <ul class="list-inline product-controls">
+          <li><a href=""><i class="fa fa-heart"></i></a></li>
+          <li><a href=""><i class="fa fa-share"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul>
+      </div>
+      <% end %>
     </div>
-  </div>
 
