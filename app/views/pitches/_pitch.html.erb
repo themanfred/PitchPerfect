@@ -8,8 +8,8 @@
           <%= image_tag user_avatar(pitch.user), class: "avatar-bordered-large"  %>
           </div>
            <div class="text-center ">
-              <h5><%=  pitch.user.first_name  %>
-                <%=  pitch.user.last_name  %></h5>
+              <h5>     <strong> <%=  pitch.user.first_name  %>
+     <%= pitch.user.last_name  %>  </strong> </h5>
             </div>
               <div class="card-content text-cent">
 
@@ -23,8 +23,8 @@
                   <div>
                     <h5> <%=  pitch.duration %> min. | <%=  pitch.created_at.strftime("%b %d, %Y") %></h5>
                   </div>
-                  <div class="pitch-booking text-center">
-                    <%= link_to "Details",pitch_path(pitch), class: "btn btn-primary "  %>
+                  <div class="space text-center">
+                    <%= link_to "Details",pitch_path(pitch), class: " btn-outline-primary "  %>
                   </div>
                 </div>
             </div>
