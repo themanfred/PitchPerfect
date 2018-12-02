@@ -1,7 +1,6 @@
-<div class="container text-center">
-     <div class="grid ">
-        <div class="card card1">
-           <div class="card-content">
+<div class="container">
+  <div class="grid">
+    <div class="text-center">
           <%=  image_tag user_avatar(current_user), class: "avatar-bordered-large center-block" %>
             <h2>
               <%= @pitch.user.first_name %>
@@ -14,20 +13,12 @@
              </p>
 
              <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
-          </div>
-         </div>
 
-
-      <div class="card card2 ">
-        <div class="card-content">
           <h2>More about <%=@pitch.user.first_name %></h2>
-          <p class="text-justify">
           <%= @pitch.user.description %>
           </p>
-        <end>
-        </div>
-    </div>
-
+          </div>
+      </div>
 </div>
 
 <div class="card card2">

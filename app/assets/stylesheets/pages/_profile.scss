@@ -1,10 +1,46 @@
+
 .tabs {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
+  padding: 10px 10px 0 10px;
+ width: 70vw;
+ margin: 0 auto;
 }
+
+
+.tabs a {
+  color: #ff8000;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.tabs p {
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+.tab {
+  background: white;
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 15px 0;
+}
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.tab.active {
+  background: #FF8000;
+  color: white;
+}
+
 
 
 .basicinfo {
@@ -39,18 +75,8 @@ flex-direction: row-reverse;
 
 }
 
-.card2 {
-  grid-column: 2/span 3;
- }
 
- .pins p{
-  margin: 0px;
 
- }
-
-.marg {
-  margin: 0 10%;
-}
 .avatar {
 display: flex;
 justify-content: flex-start;
@@ -58,6 +84,8 @@ align-items: center;
 flex-direction: row;
 margin-top: -7px;
 margin-left: 10%;
+padding: 20px 10px 35px;
+
 
 }
 
@@ -77,13 +105,6 @@ margin-left: 10%;
   margin-left: 5px;
  }
 
-
-.pins {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  height: 68px;
-}
 
 
 #name {
