@@ -15,35 +15,33 @@ linear-gradient(-225deg, rgba(189,194,197,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<
                   label: false,
                   required: true,
                   autofocus: true ,
-                  placeholder: " Tilte of the pitch" %>
+                  placeholder: "Every great pitch needs a name!" %>
                </div>
               <div class="col-md-12">
                   <%= f.input :topic,
                     label: false,
                     required: true,
-                    autofocus: true ,
                     placeholder: "Topic" %>
                 </div>
               <div class="col-md-12">
                  <%= f.input :duration,
                   label: false,
                   required: true,
-                  autofocus: true ,
-                  placeholder: "Duration" %>
+                  placeholder: "How long is your pitch, in minutes" %>
                </div>
               <div class="col-md-12">
                   <%= f.input :target,
                   label: false,
                   required: true,
-                  autofocus: true ,
-                  placeholder: "Target" %>
+                  placeholder: "Who is your target audience?" %>
                </div>
              <div class="col-md-12">
                 <%= f.input :transcript,
                   label: false,
+as: :text,
                   required: true,
-                  autofocus: true ,
-                  placeholder: "Transcript" %>
+                  placeholder: "Copy & paste your pitch, here.",
+                  :input_html => { 'rows' => 4, 'cols' => 10 } %>
               </div>
                 <div class="form-actions">
               <%= f.button :submit, "Create a pitch", class: "btn-primary" %>
