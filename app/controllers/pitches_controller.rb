@@ -46,6 +46,10 @@ class PitchesController < ApplicationController
     end
   end
 
+  def video
+    @pitch = @pitch = Pitch.find(params[:pitch_id])
+  end
+
 private
   def set_pitch
     @pitch = Pitch.find(params[:id])
