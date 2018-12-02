@@ -2,12 +2,13 @@
      <div class="avatar">
       <%= image_tag user_avatar(current_user), class: "avatar-bordered-large " %>
       <div class="principale">
-        <h2><%= @user.first_name %> Gabriel Zerbib <%= @user.last_name   %></h2>
+        <h2><%= @user.first_name %> <%= @user.last_name   %></h2>
         <h3> Pitch Expert</h3>
-        <h3  > Voir desciption</h3> <%= @user.description %>
+        <h3 > <strong>Your desciption:</strong></h3> <%= @user.description %>
         <h3> <%= link_to "Edit your profile" , edit_user_registration_path%> </h3>
      </div>
     </div>
+
  <div class="tabs">
           <a class="tab active" href="#">
             <h3>350</h3>
@@ -28,17 +29,6 @@
         </div>
 
     </div>
-
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
 

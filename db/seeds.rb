@@ -34,7 +34,7 @@ Feedback.create!(
   value_comment:Faker::Lorem.paragraph,
   quality:2,
   quality_comment:Faker::Lorem.paragraph,
-  clarity:2,
+  clarity: 2,
   clarity_comment: Faker::Lorem.paragraph,
   pace:4,
   pace_comment:Faker::Lorem.paragraph,
