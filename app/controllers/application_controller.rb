@@ -12,10 +12,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :description, :photo, :photo_cache])
   end
 
-   protected
-    def after_sign_in_path_for(resource)
+   # protected
+   #  def after_sign_in_path_for(resource)
 
-    return new_pitch_path
+   #  return new_pitch_path
 
-    end
+   #  end
 end
