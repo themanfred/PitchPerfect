@@ -1,4 +1,15 @@
 
+
+@media only screen and (max-width: 600px) {
+.tabs {
+width: 100vw !important;
+}
+
+.profilecard {
+padding: 0px;
+}
+}
+
 .tabs {
   display: flex;
     margin-top: 10px;
@@ -10,6 +21,7 @@
 
 .tabs a {
   color: #ff8000;
+  text-decoration: none;
 }
 .tabs a:hover {
   cursor: pointer;
@@ -40,6 +52,7 @@
 .tab.active {
   background: #FF8000;
   color: white;
+  text-decoration: none;
 }
 
 

@@ -9,7 +9,12 @@
     </div>
 
  <div class="tabs">
-          <a class="tab active" href="#">
+
+            <a class="tab active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="profile" aria-selected="false" >
+           <h3>Description</h3>
+          </a>
+
+          <a class="tab "  id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
             <h3>15</h3>
             <p>My Pitch</p>
           </a>
@@ -17,10 +22,7 @@
             <h3>456</h3>
             <p>Reviews</p>
           </a>
-          <a class="tab" href="#">
-            <h3>189</h3>
-            <p>Followers</p>
-          </a>
+
           <a class="tab" href="#">
             <h3>13</h3>
             <p>Following</p>
@@ -29,8 +31,9 @@
 
     </div>
 
-  <div class="container">
-<% @pitchs.each do |pitch| %>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade  " id="home" role="tabpanel" aria-labelledby="home-tab"><% @pitchs.each do |pitch| %>
+    <div class="container">
       <div class="product">
         <div class="product-upvote">
           <div class="product-arrow"></div>
@@ -47,6 +50,21 @@
           <li><a href=""><i class="fa fa-star"></i></a></li>
         </ul>
       </div>
-      <% end %>
     </div>
+  <% end %>
+</div>
+
+  <div class="tab-pane fade  active" id="description" role="tabpanel" aria-labelledby="description-tab">
+    <div class="profilecard2 ">
+    <h1> <%= @user.description%></h1>
+   </div>
+</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+
+
+
+
+
+  </div>
 
