@@ -4,19 +4,26 @@
        <div class="text-center">
        </div>
         <%= simple_form_for [@pitch, @feedback] do |f| %>
-        <%= f.input :value %>
+
+    <div class="">
+      <h3 class="text-center">Rating</h3>
+        <%= f.input :value,collection: 1..5, prompt: "Select your rating", include_blank: false, include_hidden: false  %>
+        <%= f.input :quality,collection: 1..5, prompt: "Select your rating"  %>
+        <%= f.input :clarity,collection: 1..5, prompt: "Select your rating"  %>
+        <%= f.input :pace,collection: 1..5, prompt: "Select your rating"  %>
+        <%= f.input :body_language,collection: 1..5, prompt: "Select your rating"  %>
+        <%= f.input :language,collection: 1..5, prompt: "Select your rating"  %>
+    </div>
+    <div class="">
+       <h3 class="text-center">Comment</h3>
         <%= f.input :value_comment,placeholder: 'Did you feel it was useful?' %>
-        <%= f.input :quality %>
         <%= f.input :quality_comment,placeholder: 'Was the pitch well given?' %>
-        <%= f.input :clarity %>
         <%= f.input :clarity_comment,placeholder: 'Did you understood the pitch?' %>
-        <%= f.input :pace %>
         <%= f.input :pace_comment,placeholder: 'Was the speed of the pitch adequate?' %>
-        <%= f.input :body_language %>
         <%= f.input :body_language_comment,placeholder: 'How effective was it?' %>
-        <%= f.input :language %>
         <%= f.input :language_comment,placeholder: 'Was the language used appropiate?' %>
          <%= f.input :comment,placeholder: 'Do you have an additional feedback?' %>
+         </div>
         <%= f.button :submit, class: "btn btn-danger align-middle " %>
         <% end %>
     </div>
