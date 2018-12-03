@@ -106,7 +106,7 @@ border-radius: 5px;
 
 
 .pitchcard {
-  width: 600px;
+  width: 40vw;
   background-color:  rgba(250, 250, 250, 0.4);
   padding: 60px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -116,10 +116,28 @@ border-radius: 5px;
   margin-top:  16px;
   margin-bottom: 30px;
   // margin-left: 172px;
-  height: 468px;
+  height: 50vh;
   color: black;
   border-radius: 10px;
 }
+
+
+.feedbackcard {
+  width: 60vw;
+  background-color:  rgba(250, 250, 250, 0.4);
+  padding: 1vw;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: block;
+  align-items: center;
+  justify-content: space-around;
+  margin-top:  1vh;
+  margin-bottom: 2vh;
+  // margin-left: 172px;
+  height: 95vh;
+  color: black;
+  border-radius: 10px;
+}
+
 
 .pitchcard h2 {
   margin-top: -50px;
@@ -186,8 +204,15 @@ border-radius: 5px;
 .card-content {
   padding: 17px;
   height: 25%;
+<<<<<<< HEAD
   display: block;
 
+=======
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+>>>>>>> cf44ff77af82252345029b547ed40617726645fd
   color: #A39E9E;
 }
 
