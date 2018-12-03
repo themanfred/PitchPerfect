@@ -23,6 +23,12 @@
 }
 
 
+.cards-pp h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ff8000;
+}
+
+
 .btn-outline-primary {
 border: 1px solid;
 background-color: antiquewhite;
@@ -180,20 +186,9 @@ border-radius: 5px;
 .card-content {
   padding: 17px;
   height: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-<<<<<<< HEAD
-=======
-      color: #A39E9E;
+  display: block;
 
-
-
-
-
-
->>>>>>> da8ae36c830cc4ce1c98de1d1ab4572d49ffec91
+  color: #A39E9E;
 }
 
 .card-name {
@@ -219,4 +214,5 @@ border-radius: 5px;
 .card-avatar{
   display:flex;
   justify-content:center;
+  margin-bottom: 20px;
 }
