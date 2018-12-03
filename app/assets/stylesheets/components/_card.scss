@@ -192,9 +192,28 @@ border-radius: 5px;
   border-radius: 10px;
   background-size: cover !important;
   background-position: center;
-
 }
 
+
+.feedbackcard {
+  width: 80vw;
+  background-color:  white;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: block;
+
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
+
+  // margin-left: 172px;
+  height: 450px;
+  color: black;
+  border-radius: 10px;
+  background-size: cover !important;
+  background-position: center;
+}
 
 .card-image {
   height: 60%;
@@ -204,15 +223,11 @@ border-radius: 5px;
 .card-content {
   padding: 17px;
   height: 25%;
-<<<<<<< HEAD
   display: block;
-
-=======
   display: flex;
   justify-content: center;
   align-items: flex-start;
   align-content: center;
->>>>>>> cf44ff77af82252345029b547ed40617726645fd
   color: #A39E9E;
 }
 
