@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <% @pitch.feedbacks.each do |feedback| %>
+    <div class="col col-xs-12 col-sm-2">
+      <div class="rating-column">
+        <h4>Value</h4>
+         <% feedback.value.times do  %>
+          <i class="fa fa-star"></i>
+        <% end %>
+      </div>
+    </div>
+    <div class="col col-xs-12 col-sm-2">
+        <h4>Clarity</h4>
+        <% feedback.clarity.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+    </div>
+    <div class="col col-xs-12 col-sm-2">
+      <h4>Quality</h4>
+        <% feedback.quality.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+    </div>
+    <div class="col col-xs-12 col-sm-2">
+      <h4>Pace</h4>
+        <% feedback.pace.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+    </div>
+    <div class="col col-xs-12 col-sm-2">
+      <h4>Body Lang.</h4>
+       <%feedback.body_language.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+    </div>
+    <div class="col col-xs-12 col-sm-2">
+      <h4>Language</h4>
+        <% feedback.language.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+    </div>
+</div>
+<button type="button"  id="show" class="btn btn-secondary">Show Comments</button>
+<button type="button"  id="hide" class="btn btn-secondary">Hide Comments</button>
+  <div class="left ">
+      <% if feedback.value_comment.present? %>
+           <h5> <strong> Value</strong> <%= feedback.value_comment%>   </h5>
+      <% end %>
+
+         <% if feedback.clarity_comment.present? %>
+                 <h5> <strong>Clarity</strong> <%= feedback.clarity_comment%> </h5>
+          <% end %>
+
+        <% if feedback.quality_comment.present? %>
+              <h5> <strong>Quality</strong>  <%= feedback.quality_comment%>  </h5>
+          </li>
+         <% end %>
+
+         <% if feedback.pace_comment.present? %>
+            <h5> <strong>Pace</strong>  <%= feedback.pace_comment%>  </h5>
+          </li>
+         <% end %>
+
+         <% if feedback.body_language_comment.present? %>
+           <h5> <strong>Body Language</strong> <%= feedback.body_language_comment%> </h5>
+          </li>
+         <% end %>
+
+         <% if feedback.language_comment.present? %>
+              <h5>  <strong>Language</strong> <%= feedback.language_comment%>  </h5>
+         <% end %>
+         <% if feedback.comment.present? %>
+               <h5>  <strong>Additional feedback</strong> <%= feedback.comment%>  </h5>
+         <% end %>
+    </div>
+     <%= link_to 'Edit',    edit_feedback_path(feedback)  %>
+    <%= link_to 'Delete', feedback_path(feedback), method: :delete %>
+    <% end %>
+    <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+
+  </div>
+
