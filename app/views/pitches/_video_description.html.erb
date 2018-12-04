@@ -1,8 +1,9 @@
 <div class="grid text-center ">
   <div class="element">
+    <video controls="controls" src=<%= cloudinary_url(@pitch.photo.filename.split("/")[1], :resource_type => :video) %> >
+    </video>
   </div>
-  <video controls="controls" src=<%= cloudinary_url(@pitch.photo.filename.split("/")[1], :resource_type => :video) %> >
-  </video>
+
   <div class="cards-h">
     <h3></h3>
     <strong> <p></p></strong>
