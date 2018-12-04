@@ -25,7 +25,7 @@ const uppy = Uppy({
   replaceTargetContent: true,
   showProgressDetails: true,
 
-  height: 650,
+  height: 700,
   metaFields: [
     { id: 'name', name: 'Name', placeholder: 'file name' },
     { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }

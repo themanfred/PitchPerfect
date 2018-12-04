@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_093036) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "masterpitch_id"
-    t.string "video"
     t.string "photo"
     t.index ["masterpitch_id"], name: "index_pitches_on_masterpitch_id"
     t.index ["user_id"], name: "index_pitches_on_user_id"

@@ -14,7 +14,7 @@
 .cards-pp {
   margin: 1.5vw;
   width: 20vw;
-  height: 53vh;
+  height: 58vh;
   background: white;
   border-radius: .50vw;
   box-shadow:  0 0.13vw 0.91vw rgba(0,0,0,.05);
@@ -244,14 +244,11 @@ border-radius: 5px;
 }
 
 .card-content {
-  padding: 17px;
-  height: 25%;
+  margin-top: 15px;
   display: block;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
   color: #A39E9E;
+  height: 3vh;
+
 }
 
 .card-name {
