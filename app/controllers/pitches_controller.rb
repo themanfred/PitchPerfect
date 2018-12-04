@@ -57,6 +57,6 @@ private
   end
 
   def pitch_params
-    params.require(:pitch).permit(:name, :topic, :duration, :target, :transcript)
+    params.require(:pitch).permit(:name, :topic, :duration, :target, :transcript, :photo)
   end
 end
