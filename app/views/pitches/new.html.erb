@@ -21,26 +21,26 @@ linear-gradient(-225deg, rgba(189,194,197,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<
                   <%= f.input :topic,
                     label: false,
                     required: true,
-                    placeholder: "Topic" %>
+                    placeholder: "What are you talking about today?" %>
                 </div>
               <div class="col-md-12">
                  <%= f.input :duration,
                   label: false,
                   required: true,
-                  placeholder: "How long is your pitch, in minutes" %>
+                  placeholder: "How many minutes do you have to pitch?" %>
                </div>
               <div class="col-md-12">
                   <%= f.input :target,
                   label: false,
                   required: true,
-                  placeholder: "Who is your target audience?" %>
+                  placeholder: "Who are you pitching to?" %>
                </div>
              <div class="col-md-12">
                 <%= f.input :transcript,
                   label: false,
 as: :text,
                   required: true,
-                  placeholder: "Copy & paste your pitch, here.",
+                  placeholder: "Copy & paste your transcript, here if you have one.",
                   :input_html => { 'rows' => 4, 'cols' => 10 } %>
               </div>
                 <div class="form-actions">
