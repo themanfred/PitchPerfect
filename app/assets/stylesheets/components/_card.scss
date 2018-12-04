@@ -47,6 +47,11 @@
 
 
 
+.cards-pp h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ff8000;
+}
+
 .btn-outline-primary {
 border: 1px solid;
 background-color: antiquewhite;
@@ -210,9 +215,28 @@ border-radius: 5px;
   border-radius: 10px;
   background-size: cover !important;
   background-position: center;
-
 }
 
+
+.feedbackcard {
+  width: 80vw;
+  background-color:  white;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: block;
+
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
+
+  // margin-left: 172px;
+  height: 450px;
+  color: black;
+  border-radius: 10px;
+  background-size: cover !important;
+  background-position: center;
+}
 
 .card-image {
   height: 60%;
@@ -222,6 +246,7 @@ border-radius: 5px;
 .card-content {
   padding: 17px;
   height: 25%;
+  display: block;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -252,4 +277,5 @@ border-radius: 5px;
 .card-avatar{
   display:flex;
   justify-content:center;
+  margin-bottom: 20px;
 }

@@ -3,6 +3,7 @@ class PitchesController < ApplicationController
 
   def index
     @pitches = Pitch.all
+    # @users = Pitch.where(id: @pitch.user_ids)
   end
 
   def show

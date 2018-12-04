@@ -1,82 +1,163 @@
 <div class="container">
   <div class="row">
-    <% @pitch.feedbacks.each do |feedback| %>
-    <div class="col col-xs-12 col-sm-2">
-      <div class="rating-column">
-        <h4>Value</h4>
-         <% feedback.value.times do  %>
-          <i class="fa fa-star"></i>
-        <% end %>
+
+ <% @pitch.feedbacks.each do |feedback| %>
+
+   <div class="feedbackcard ">
+
+    <div class="avatarfeedback">
+      <%= image_tag user_avatar(current_user), class: "avatar-bordered-large " %>
+      <div class="principale">
+        <h2><%= feedback.user.first_name %> <%= feedback.user.last_name %></h2>
+        <h3> Pitch Expert</h3>
+     </div>
+    </div>
+
+      <div class="tabs2">
+
+           <a class="tab " id="quality-tab" data-toggle="tab" href="#quality" role="tab" aria-controls="home" aria-selected="true">
+              <div class="col col-xs-12 col-sm-12">
+              <h4>Quality</h4>
+              <% feedback.quality.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+           </a>
+
+       <a class="tab" id="value-tab" data-toggle="tab" href="#value" role="tab" aria-controls="profile" aria-selected="false" >
+
+          <div class="col col-xs-12 col-sm-12">
+            <div class="rating-column">
+              <h4>Value</h4>
+               <% feedback.value.times do  %>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+          </div>
+                </a>
+
+           <a class="tab " id="clarity-tab" data-toggle="tab" href="#clarity" role="tab" aria-controls="home" aria-selected="true">
+              <div class="col col-xs-12 col-sm-12">
+              <h4>Clarity</h4>
+              <% feedback.clarity.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+           </a>
+
+
+          <a class="tab " id="pace-tab" data-toggle="tab" href="#pace" role="tab" aria-controls="home" aria-selected="true">
+              <div class="col col-xs-12 col-sm-12">
+              <h4>Pace</h4>
+              <% feedback.pace.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+           </a>
+
+           <a class="tab " id="body-tab" data-toggle="tab" href="#body" role="tab" aria-controls="home" aria-selected="true">
+              <div class="col col-xs-12 col-sm-12">
+              <h4>Body Lang.</h4>
+              <% feedback.body_language.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+           </a>
+
+           <a class="tab " id="language-tab" data-toggle="tab" href="#language" role="tab" aria-controls="home" aria-selected="true">
+              <div class="col col-xs-12 col-sm-12">
+              <h4>Language</h4>
+              <% feedback.language.times do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+            </div>
+           </a>
       </div>
-    </div>
-    <div class="col col-xs-12 col-sm-2">
-        <h4>Clarity</h4>
-        <% feedback.clarity.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-    </div>
-    <div class="col col-xs-12 col-sm-2">
-      <h4>Quality</h4>
-        <% feedback.quality.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-    </div>
-    <div class="col col-xs-12 col-sm-2">
-      <h4>Pace</h4>
-        <% feedback.pace.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-    </div>
-    <div class="col col-xs-12 col-sm-2">
-      <h4>Body Lang.</h4>
-       <%feedback.body_language.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-    </div>
-    <div class="col col-xs-12 col-sm-2">
-      <h4>Language</h4>
-        <% feedback.language.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-    </div>
-</div>
-<button type="button"  id="show" class="btn btn-secondary">Show Comments</button>
-<button type="button"  id="hide" class="btn btn-secondary">Hide Comments</button>
-  <div class="left ">
-      <% if feedback.value_comment.present? %>
+
+
+   <div class="tab-content" id="myTabContent">
+
+       <div class="tab-pane fade" id="quality" role="tabpanel" aria-labelledby="quality-tab">
+           <% if feedback.quality_comment.present? %>
+                  <h5> <strong>Quality</strong>  <%= feedback.quality_comment%>  </h5>
+              </li>
+             <% end %>
+       </div>
+
+
+
+        <div class="tab-pane fade  " id="value" role="tabpanel" aria-labelledby="value-tab">
+           <% if feedback.value_comment.present? %>
            <h5> <strong> Value</strong> <%= feedback.value_comment%>   </h5>
-      <% end %>
-
-         <% if feedback.clarity_comment.present? %>
-                 <h5> <strong>Clarity</strong> <%= feedback.clarity_comment%> </h5>
           <% end %>
+        </div>
 
-        <% if feedback.quality_comment.present? %>
-              <h5> <strong>Quality</strong>  <%= feedback.quality_comment%>  </h5>
-          </li>
+        <div class="tab-pane fade  active" id="clarity" role="tabpanel" aria-labelledby="clarity-tab">
+         <% if feedback.clarity_comment.present? %>
+         <h5> <strong>Clarity</strong> <%= feedback.clarity_comment%> </h5>
          <% end %>
+        </div>
 
-         <% if feedback.pace_comment.present? %>
-            <h5> <strong>Pace</strong>  <%= feedback.pace_comment%>  </h5>
-          </li>
-         <% end %>
+        <div class="tab-pane fade" id="pace" role="tabpanel" aria-labelledby="pace-tab">
+           <% if feedback.pace_comment.present? %>
+           <h5> <strong>Pace</strong>  <%= feedback.pace_comment%>  </h5>
+           </li>
+           <% end %>
+        </div>
 
-         <% if feedback.body_language_comment.present? %>
+
+        <div class="tab-pane fade" id="body" role="tabpanel" aria-labelledby="body-tab">
+           <% if feedback.body_language_comment.present? %>
            <h5> <strong>Body Language</strong> <%= feedback.body_language_comment%> </h5>
           </li>
          <% end %>
+       </div>
 
+
+      <div class="tab-pane fade" id="language" role="tabpanel" aria-labelledby="language-tab">
          <% if feedback.language_comment.present? %>
-              <h5>  <strong>Language</strong> <%= feedback.language_comment%>  </h5>
+         <h5>  <strong>Language</strong> <%= feedback.language_comment%>  </h5>
          <% end %>
-         <% if feedback.comment.present? %>
-               <h5>  <strong>Additional feedback</strong> <%= feedback.comment%>  </h5>
+       </div>
+   </div>
+
+        <div class="text-center" id=addfeedback>
+          <% if feedback.comment.present? %>
+           <h5>  <strong>Additional feedback</strong> <%= feedback.comment%>  </h5>
          <% end %>
-    </div>
+       </div>
+
+
+
+   </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      <%= link_to 'Edit',    edit_feedback_path(feedback)  %>
     <%= link_to 'Delete', feedback_path(feedback), method: :delete %>
     <% end %>
     <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
 
-  </div>
+</div>
 
