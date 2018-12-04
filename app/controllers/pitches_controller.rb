@@ -33,14 +33,6 @@ class PitchesController < ApplicationController
   end
 
   def destroy
-    if @pitch.present?
-     @pitch.destroy
-    else
-      redirect_to pitch_path(@pitch)
-    end
-  end
-
-  def destroy
       @pitch.destroy
       respond_to do |format|
       format.html { redirect_to pitches_url, notice: "#{@pitch.name} was deleted." }
