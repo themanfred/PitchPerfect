@@ -1,7 +1,13 @@
 <div class="grid text-center ">
   <div class="element">
-    <video controls="controls" src=<%= cloudinary_url(@pitch.photo.filename.split("/")[1], :resource_type => :video) %> >
-    </video>
+    <% if @pitch.photo.present? %>
+        <video width="100%" height="auto" controls="controls" src=<%= cloudinary_url(@pitch.photo.filename.split("/")[1], :resource_type => :video) %> >
+        </video>
+      <% else %>
+      <video width="100%" height="auto" controls="controls">
+      </video>
+    <% end %>
+
   </div>
 
   <div class="cards-h">
