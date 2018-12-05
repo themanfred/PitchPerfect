@@ -1,81 +1,5 @@
 
 
-@media only screen and (max-width: 600px) {
-.tabs {
-width: 100vw !important;
-}
-
-.profilecard {
-padding: 0px;
-}
-}
-
-.tabs {
-  display: flex;
-    margin-top: 10px;
- width: 70vw;
- margin: 39px auto;
- padding: 10px;
-}
-
-
-.tabs a {
-  color: #ff8000;
-  text-decoration: none;
-}
-.tabs a:hover {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.8;
-}
-.tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-top: 0;
-}
-.tabs p {
-  opacity: 0.5;
-  margin-bottom: 0;
-}
-.tab {
-  background: white;
-  flex: 0 0 25%;
-  text-align: center;
-  padding: 15px 0;
-}
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
-.tab.active {
-  background: #FF8000;
-  color: white;
-  text-decoration: none;
-}
-
-.tab-content {
-  max-height: 150px;
-  overflow-y:scroll;
-}
-.tab-content > .active {
- display: flex;
- justify-content: space-around;
-
-}
-
-
-.tabs2 {
- display: flex;
- width: 50vw;
- padding: 2px;
-}
-
-
-#addfeedback {
-margin-top: 7%;
-}
 
 
 .product {
@@ -181,12 +105,6 @@ margin-top: 7%;
 
 }
 
-#description {
-
-display: flex;
-justify-content: center;
-
-}
 
 .edit {
 display: flex;
@@ -218,9 +136,9 @@ padding: 20px 10px 35px;
 .avatarfeedback {
 display: flex;
 justify-content: center;
-align-items: center;
+align-items: end;
 flex-direction: row;
-margin-left: -7%;
+
 }
 
 
