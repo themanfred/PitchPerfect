@@ -2,30 +2,27 @@
     <div class="row ">
     <% @pitches.each do |pitch|  %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-         <div class=" cards-pp ">
-          <div class="card-avatar ">
-          <%= image_tag user_avatar(pitch.user), class: "avatar-bordered-large"  %>
-          </div>
-           <div class="text-center ">
+        <div class=" cards-pp ">
+            <div class="card-avatar ">
+            <%= image_tag user_avatar(pitch.user), class: "avatar-bordered-large"  %>
+            </div>
+            <div class="text-center ">
               <h2>   <strong><%= pitch.name %>   </strong> </h3>
             </div>
+
               <div class="card-content text-cent">
+                <h4>  <%=  pitch.user.first_name  %>
+                <%= pitch.user.last_name  %> </h4>
+                <h5> <%=  pitch.topic %> </h5>
+                <h5> <%= pitch.target %> </h5>
+                <h6> <%=  pitch.duration %> min. | <%=  pitch.created_at.strftime("%b %d, %Y") %></h6>
 
-
-                  <h5>  <%=  pitch.user.first_name  %>
-                        <%= pitch.user.last_name  %> </h5>
-
-                    <h5> <%=  pitch.topic %> </h5>
-                    <h5> <%= pitch.target %> </h5>
-
-                    <h6> <%=  pitch.duration %> min. | <%=  pitch.created_at.strftime("%b %d, %Y") %></h6>
-
-                  <div class="space text-center">
-                    <%= link_to "Details",pitch_path(pitch), class: " btn-outline-primary "  %>
-                  </div>
+                <div class="space text-center">
+                  <%= link_to "Details",pitch_path(pitch), class: " btn-outline-primary "  %>
+                </div>
 
             </div>
-          </div>
+         </div>
       </div>
     <% end %>
   </div>
