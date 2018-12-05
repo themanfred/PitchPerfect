@@ -241,3 +241,23 @@ border-radius: 5px;
   justify-content:center;
   margin-bottom: 20px;
 }
+
+.pitch-card {
+  border: 1px solid #dcdcdc;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  margin: 2% auto;
+  padding: 10%;
+  background-color: white;
+}
+
+.img-round {
+  border-radius: 50%;
+  max-width: 75px;
+  max-height: 75px;
+
+}
