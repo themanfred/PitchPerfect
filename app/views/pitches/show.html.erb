@@ -13,9 +13,20 @@
       </div>
       <div class="row">
         <div class="pitch-card">
-          <%=       @pitch.name %>
-          <%= link_to 'Edit',    edit_pitch_path(@pitch)  %>
+         <h4 class="text-center">
+          <%=  @pitch.name %>
+         </h4>
+         <div class="left">
+           <h5 > <%=  @pitch.topic %> </h5>
+           <h5 > <%= @pitch.target %> </h5>
+           <h5 >  <%=  @pitch.user.first_name  %>
+                  <%= @pitch.user.last_name  %> </h5>
+           <h6 > <%=  @pitch.duration %> min. | <%=  @pitch.created_at.strftime("%b %d, %Y") %></h6>
+         </div>
+         <div>
+          <%= link_to 'Edit |',    edit_pitch_path(@pitch)  %>
           <%= link_to 'Delete', @pitch_path, method: :delete %>
+          </div>
         </div>
       </div>
     </div>
