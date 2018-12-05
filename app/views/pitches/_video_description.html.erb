@@ -1,4 +1,4 @@
-<div class="grid text-center ">
+<div class="grid  ">
   <div class="element">
     <% if @pitch.photo.present? %>
         <video width="100%" height="auto" controls="controls" src=<%= cloudinary_url(@pitch.photo.filename.split("/")[1], :resource_type => :video) %> >
@@ -11,12 +11,15 @@
   </div>
 
   <div class="cards-h">
-    <h3></h3>
-    <strong> <p></p></strong>
+    <h5>
+      <%= @pitch.user.first_name  %>
+      <%= @pitch.user.last_name  %>
+    </h5>
   </div>
   <div class="cards-h2 ">
-     <h3></h3>
-    <strong> <p></p></strong>
+     <h3 class= "text-center"> <%= @pitch.name.capitalize %> </h3>
+      <h5><%= @pitch.topic %> </h5>
+      <h5><%= @pitch.target %> </h5>
+      <h6 class= "transcript"> <%= @pitch.duration %> min. | Made <%=  @pitch.created_at.strftime("%b %d, %Y") %></h6>
+     <h5><%= @pitch.transcript %> </h5>
   </div>
-</div>
-
