@@ -1,13 +1,35 @@
-
 <div class="container">
-  <%= render 'pitches/video_description' %>
-    <div class= "right">
-         <%= link_to 'Edit',    edit_pitch_path(@pitch)  %>
-        <%= link_to 'Delete', @pitch_path, method: :delete %>
+  <div class="row">
+    <div class="col col-xs-12 col-sm-8">
+      <%= render 'video_description' %>
     </div>
-  <% if @pitch.feedbacks.any? %>
-    <%= render 'pitches/feedback_present' %>
-  <% else %>
-        <%= render 'pitches/no_feedback' %>
-  <% end %>
+    <div class="col col-xs-12 col-sm-4">
+      <div class="row">
+        <div class="pitch-card">
+          <%= cl_image_tag user_avatar(@pitch.user), class: "img-round" %>
+          <%=  @pitch.user.first_name %>
+          <%=  @pitch.user.last_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="pitch-card">
+          <%=       @pitch.name %>
+          <%= link_to 'Edit',    edit_pitch_path(@pitch)  %>
+          <%= link_to 'Delete', @pitch_path, method: :delete %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% if @pitch.feedbacks.any? %>
+      <%= render 'pitches/feedback_present' %>
+    <% else %>
+      <%= render 'pitches/no_feedback' %>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="text-center ">
+      <%= link_to "Add Feedback",new_pitch_feedback_path(@pitch), class: "btn btn-danger btn-lg"%>
+    </div>
+  </div>
 </div>
