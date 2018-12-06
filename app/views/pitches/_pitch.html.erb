@@ -3,7 +3,7 @@
     <% @pitches.each do |pitch|  %>
       <div class="col col-xs-12 col-sm-4">
         <div class="card">
-          <div class="card-image">
+          <div class="card-image" style="background-image: url('<%= pitch.photo.url.nil? ? (pitch_photo(pitch)) : (cl_image_path pitch.photo)  %>')">
           </div>
           <div class="post-content">
             <h1 class=" title"> <%= pitch.name  %></h1>
@@ -12,11 +12,11 @@
             </h2>
             <span class="timestamp">
               <i class="fa fa-clock"></i>
-              6 mins ago
-            </span>
+            <%=  pitch.duration %> min. | <%=  pitch.created_at.strftime("%b %d, %Y") %>
+           </span>
             <span class="comments">
               <i class="fa fa-comments">
-                <a href="#"> 39 reviews </a> </i>
+               <%= pitch.feedbacks.count %> feedbacks </i>
             </span>
             <div class="space text-center">
               <%= link_to "Details",pitch_path(pitch), class: " btn-outline-primary " %>

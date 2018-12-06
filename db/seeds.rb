@@ -1,5 +1,4 @@
 Feedback.destroy_all
-Masterpitch.destroy_all
 Pitch.destroy_all
 User.destroy_all
 
@@ -8,7 +7,7 @@ User.create!(
   first_name:"Thomas",
   last_name: "Freund",
   description: "I want to learn how to improve my pitch, so that I can pitch to investors.",
-  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1543056848/lbzuns67if1kw691lzpk.jpg" ,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544087288/IMG_20180903_144516_1.jpg" ,
   email:"tfreundc@gmail.com",
   password: "123456"
 
@@ -38,33 +37,15 @@ User.create!(
 
 Pitch.create!(
   user_id: User.first.id,
-  name: Le Wagon pitch,
-  topic: Presenting Pitch Perfect,
+  name: "Le Wagon pitch",
+  topic:" Presenting Pitch Perfect",
   duration: 4,
   remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544042406/home_facebook_card-c24af70e1ea78ec96cdf28f926fc76eb3ce3ecaf973042255492aa1de7727393.jpg",
-  target: Public,
+  target: "The Le wagon audience",
   transcript:Faker::Lorem.paragraph
 )
 
 
-
-Feedback.create!(
-  user_id:User.first.id,
-  pitch_id:Pitch.first.id,
-  value:3,
-  value_comment:This could have improved,
-  quality:2,
-  quality_comment:Faker::Lorem.paragraph,
-  clarity: 2,
-  clarity_comment: Faker::Lorem.paragraph,
-  pace:4,
-  pace_comment:Faker::Lorem.paragraph,
-  body_language:3,
-  body_language_comment:Faker::Lorem.paragraph,
-  language:2,
-  language_comment:Faker::Lorem.paragraph,
-  comment:Faker::Lorem.paragraph
-)
 
 
 p "#{User.count} user exist"
