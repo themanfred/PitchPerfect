@@ -11,7 +11,7 @@ User.create!(
   email:"tfreundc@gmail.com",
   password: "123456"
 
-  )
+)
 
 User.create!(
   first_name:"Yoann ",
@@ -21,7 +21,7 @@ User.create!(
   email:" bencho@gmail.com",
   password: "123456"
 
-  )
+)
 
 User.create!(
   first_name:"Gabriel",
@@ -31,24 +31,91 @@ User.create!(
   email:"gabz@gmail.com",
   password: "123456"
 
-  )
+)
 
 
 
 Pitch.create!(
   user_id: User.first.id,
-  name: "Le Wagon pitch",
-  topic:" Presenting Pitch Perfect",
+  name: "le Wagon demo Day",
+  topic:"my own product",
   duration: 4,
-  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544042406/home_facebook_card-c24af70e1ea78ec96cdf28f926fc76eb3ce3ecaf973042255492aa1de7727393.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544091099/wagon-officiel-logo.png",
+  target: "The Le wagon audience",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch for my friends",
+  topic:"Entertaining",
+  duration: 2,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544090952/anna-vander-stel-60342-unsplash.jpg",
+  target: "The Le wagon audience",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch for my Startup",
+  topic:"Idea",
+  duration: 3,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544090590/mike-mcalister-436178-unsplash.jpg",
+  target: "The Le wagon audience",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch for my school",
+  topic:"Education",
+  duration: 4,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544090588/nathan-dumlao-572047-unsplash.jpg",
+  target: "The Le wagon audience",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch for my weeding",
+  topic:"My fabulous wife",
+  duration: 3,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544090586/designecologist-600480-unsplash.jpg",
+  target: "The Le wagon audience",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch for event",
+  topic:"Entertaining",
+  duration: 1,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544090592/priscilla-du-preez-697316-unsplash.jpg",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch online",
+  topic:"Discover",
+  duration: 6,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544090780/melany-rochester-777860-unsplash.jpg",
+  target: "The Le wagon audience",
+  transcript:Faker::Lorem.paragraph
+)
+
+Pitch.create!(
+  user_id: User.first.id,
+  name: "Pitch my Sneakers",
+  topic:"Benchneak",
+  duration: 6,
+  remote_photo_url: "https://res.cloudinary.com/dseugxpvh/image/upload/v1544092056/lefteris-kallergis-499890-unsplash.jpg",
   target: "The Le wagon audience",
   transcript:Faker::Lorem.paragraph
 )
 
 
 
-
 p "#{User.count} user exist"
 p "#{Pitch.count} pitches exist"
 p "#{Feedback.count} feedbacks exist"
-
