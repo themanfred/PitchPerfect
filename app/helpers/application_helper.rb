@@ -6,4 +6,12 @@ module ApplicationHelper
       image_path "default_avatar.png"
     end
   end
+
+  def pitch_photo(pitch)
+    if pitch.photo.present?
+      pitch.photo_url
+    else
+      image_path "pres.png"
+    end
+  end
 end
