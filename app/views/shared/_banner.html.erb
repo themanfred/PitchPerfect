@@ -2,13 +2,14 @@
 linear-gradient(-225deg, rgba(189,194,197,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path 'banner.png' %>);">
   <div class="banner-content">
     <h1> The way you pitch. We perfect it.</h1>
+    <div >
        <% if user_signed_in? %>
-        <div class="margin-left" >
+
        <%= link_to 'Pitch Now', new_pitch_path,class: "btn btn-lg  btn-primary " %>
        <% else  %>
        <%= link_to 'Pitch Now',new_user_session_path, class: "btn btn-lg  btn-primary " %>
       <% end %>
         <%= link_to 'Explore!', pitches_path, class: "btn btn-lg  btn-primary change " %>
-      </div>
+    </div>
   </div>
 </div>
