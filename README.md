@@ -1,4 +1,6 @@
 # Pitch Perfect
+![pitchpeerfect](https://github.com/themanfred/pitchperfect/assets/42932766/f4759fff-ac29-4b14-891d-813857746329)
+
 
 **Virtual Mirror:** Record presentations with an in-app teleprompter, like practicing in front of a mirror.
 
